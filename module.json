@@ -1,56 +1,66 @@
 {
-  "name": "voxludos",
-  "title": "Vox Ludorum - Text-to-speech-to-text for FVTT",
-  "description": "A text-to-speech-to-text module for FVTT, powered by Azure Speech",
-  "version": "This is auto replaced",
-  "library": "false",
-  "manifestPlusVersion": "1.0.0",
-  "minimumCoreVersion": "0.7.9",
-  "compatibleCoreVersion": "0.8.5",
-  "author": "Cody Swendrowski <cody@swendrowski.us>",
-  "authors": [
-    {
-      "name": "Cody Swendrowski",
-      "url": "https://swendrowski.us",
-      "email": "cody@swendrowski.us",
-      "discord": "cswendrowski#9701",
-      "patreon": "ironmoose"
-    }
-  ],
-  "dependencies": [
-
-  ],
-  "conflicts": [
-    
-  ],
-  "esmodules": [
-    "/scripts/module.js"
-  ],
-  "scripts": [
-    "./scripts/lib/microsoft.cognitiveservices.speech.sdk.bundle.js"
-  ],
-  "styles": [
-    "/styles/module.css"
-  ],
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "languages/en.json"
-    },
-    {
-      "lang": "cn",
-      "name": "中文",
-      "path": "languages/cn.json"
-    }
-  ],
-  "url": "This is auto replaced",
-  "manifest": "This is auto replaced",
-  "download": "This is auto replaced",
-  "media": [
-    {
-      "type": "icon",
-      "url": "https://avatars2.githubusercontent.com/u/71292812?s=400&u=ccdb4eeb7abf551ca8f314e5a9bfd0479a4d3d41&v=4"
-    }
-  ]
+	"name": "voxludos",
+	"title": "Vox Ludorum - Text-to-speech-to-text for FVTT",
+	"description": "A text-to-speech-to-text module for FVTT, powered by Azure Speech",
+	"library": "false",
+	"manifestPlusVersion": "1.0.0",
+	"version": "1.0.0",
+	"minimumCoreVersion": "10.290",
+	"compatibleCoreVersion": "10",
+	"compatibility": {
+		"minimum": 10,
+		"verified": "10.284"
+	},
+	"relationships": {
+	},
+	"authors": [
+		{
+			"name": "Cody Swendrowski",
+			"url": "https://swendrowski.us",
+			"email": "cody@swendrowski.us",
+			"discord": "cswendrowski#9701",
+			"patreon": "ironmoose"
+		},
+		{
+			"name": "Bembe83"
+		}
+	],
+	"dependencies": [],
+	"conflicts": [],
+	"esmodules": [
+		"/scripts/module.js"
+	],
+	"scripts": [
+		"./scripts/lib/microsoft.cognitiveservices.speech.sdk.bundle.js"
+	],
+	"styles": [
+		"/styles/module.css"
+	],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "languages/en.json",
+			"flag": {
+				
+			}
+		},
+		{
+			"lang": "cn",
+			"name": "中文",
+			"path": "languages/cn.json",
+			"flag": {
+				
+			}
+		}
+	],
+	"url": "This is auto replaced",
+	"manifest": "This is auto replaced",
+	"download": "This is auto replaced",
+	"media": [
+		{
+			"type": "icon",
+			"url": "https://avatars2.githubusercontent.com/u/71292812?s=400&u=ccdb4eeb7abf551ca8f314e5a9bfd0479a4d3d41&v=4"
+		}
+	]
 }

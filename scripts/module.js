@@ -15,7 +15,8 @@ Hooks.on('renderActorSheet', function(sheet, html, data) {
     }
 
     html.find(".fvtt-speak").click(async event => {
-        await window.game.speech.transcribe(sheet.actor);
+		let speech = new Speech();
+        await speech.transcribe(sheet.actor);
     });
 
 });
@@ -26,8 +27,8 @@ Hooks.on('renderChatMessage', function(message, html, data) {
 
     html.find('.message-speak').click(event => {
         let args;
-        if (message.data.speaker?.actor) {
-            let speaker = game.actors.get(message.data.speaker?.actor);
+        if (message.speaker?.actor) {
+            let speaker = game.actors.get(message.speaker?.actor);
             args = {
                 voice: speaker.getFlag(constants.moduleName, "voice"),
                 lang: speaker.getFlag(constants.moduleName, "lang"),
@@ -37,7 +38,8 @@ Hooks.on('renderChatMessage', function(message, html, data) {
                 pitch: speaker.getFlag(constants.moduleName, "pitch"),
             };
         }
-        window.game.speech.speakText(message.data.content, args);
+        let speech = new Speech();
+        await speech.speakText(message.data.content, args);
     });
 });
 
@@ -57,19 +59,21 @@ Hooks.on('renderChatLog', function(directory, html, data) {
             ui.notifications.warn(game.i18n.localize("voxludos.warn.noActorSelected"));
             return;
         }
-        await window.game.speech.transcribe(actor);
+        let speech = new Speech();
+        await speech.transcribe(actor);
     })
 });
 
 Hooks.on("createChatMessage", async (message) => {
     if (game.settings.get(constants.moduleName, "autoRead")) {
         if (message.user.id != game.user.id) {
-            await window.game.speech.speakText(message.data.content);
+			let speech = new Speech();
+            await speech.speakText(message.content);
         }
     }
 });
 
 Hooks.once('ready', async function() {
     await Settings.registerSettings();
-    window.game.speech = new Speech()
+    //window.game.speech = new Speech();
 });
