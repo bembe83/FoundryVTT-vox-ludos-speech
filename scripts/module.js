@@ -14,7 +14,7 @@ Hooks.on('renderActorSheet', function(sheet, html, data) {
         configureSheet.before(toAppend);
     }
 
-    html.find(".fvtt-speak").click(async event => {
+    html.find(".fvtt-speak").click(async () => {
 		let speech = new Speech();
         await speech.transcribe(sheet.actor);
     });
@@ -25,11 +25,11 @@ Hooks.on('renderChatMessage', function(message, html, data) {
     html.find('.message-delete')
         .before(' <a class="button message-speak"><i class="fas fa-headphones"></i></a>');
 
-    html.find('.message-speak').click(event => {
-        let args;
+    html.find('.message-speak').click(async () => {
+        let voiceSettings;
         if (message.speaker?.actor) {
             let speaker = game.actors.get(message.speaker?.actor);
-            args = {
+            voiceSettings = {
                 voice: speaker.getFlag(constants.moduleName, "voice"),
                 lang: speaker.getFlag(constants.moduleName, "lang"),
                 style: speaker.getFlag(constants.moduleName, "style"),
@@ -39,7 +39,8 @@ Hooks.on('renderChatMessage', function(message, html, data) {
             };
         }
         let speech = new Speech();
-        await speech.speakText(message.data.content, args);
+        let messageText = message.content;
+        await speech.speakText(messageText, voiceSettings);
     });
 });
 
@@ -47,7 +48,7 @@ Hooks.on('renderChatLog', function(directory, html, data) {
     html.find('.control-buttons > .export-log')
         .before('<a class="button fvtt-speak" title="Speak"><i class="fas fa-microphone"></i></a>');
 
-    html.find('.fvtt-speak').click(async event => {
+    html.find('.fvtt-speak').click(async () => {
         let actor = undefined;
         if (canvas.tokens.controlled?.length > 0) {
             actor = canvas.tokens.controlled[0].actor;
@@ -72,6 +73,19 @@ Hooks.on("createChatMessage", async (message) => {
         }
     }
 });
+
+Hooks.on('renderJournalTextPageSheet', function(journalPage, html, data) {
+    
+    html.find('.editor-edit')
+        .before(' <a class="button journal-speak"><i class="fas fa-headphones"></i></a>');
+
+    html.find('.journal-speak').click(async () => {
+        let speech = new Speech();
+        let messageText = journalPage.objecct.name+"\n"+jQuery("<p>"+journalPage.object.text.content+"</p>")
+        await speech.speakText(messageText, args);
+    });
+});
+
 
 Hooks.once('ready', async function() {
     await Settings.registerSettings();
