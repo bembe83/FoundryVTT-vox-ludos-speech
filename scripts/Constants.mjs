@@ -6,58 +6,58 @@ const constants = {
 export default constants;
 
 /*
-it-IT-BenignoNeural (Male)
-it-IT-CalimeroNeural (Male)
-it-IT-CataldoNeural (Male)
-it-IT-DiegoNeural1 (Male)
-it-IT-ElsaNeural (Female)
-it-IT-FabiolaNeural (Female)
-it-IT-FiammaNeural (Female)
-it-IT-GianniNeural (Male)
-it-IT-ImeldaNeural (Female)
-it-IT-IrmaNeural (Female)
-it-IT-IsabellaNeural (Female)
-it-IT-LisandroNeural (Male)
-it-IT-PalmiraNeural (Female)
-it-IT-PierinaNeural (Female)
-it-IT-RinaldoNeural (Male)
-en-GB-AbbiNeural (Female)
-en-GB-AlfieNeural (Male)
-en-GB-BellaNeural (Female)
-en-GB-ElliotNeural (Male)
-en-GB-EthanNeural (Male)
-en-GB-HollieNeural (Female)
-en-GB-LibbyNeural (Female)
-en-GB-MaisieNeural (Female, Child)
-en-GB-NoahNeural (Male)
-en-GB-OliverNeural (Male)
-en-GB-OliviaNeural (Female)
-en-GB-RyanNeural (Male)
-en-GB-SoniaNeural (Female)
-en-GB-ThomasNeural (Male)
-en-US-AIGenerate1Neural1 (Male)
-en-US-AIGenerate2Neural1 (Female)
-en-US-AmberNeural (Female)
-en-US-AnaNeural (Female, Child)
-en-US-AriaNeural (Female)
-en-US-AshleyNeural (Female)
-en-US-BrandonNeural (Male)
-en-US-ChristopherNeural (Male)
-en-US-CoraNeural (Female)
-en-US-DavisNeural (Male)
-en-US-ElizabethNeural (Female)
-en-US-EricNeural (Male)
-en-US-GuyNeural (Male)
-en-US-JacobNeural (Male)
-en-US-JaneNeural (Female)
-en-US-JasonNeural (Male)
-en-US-JennyMultilingualNeural3 (Female)
-en-US-JennyNeural (Female)
-en-US-MichelleNeural (Female)
-en-US-MonicaNeural (Female)
-en-US-NancyNeural (Female)
-en-US-RogerNeural (Male)
-en-US-SaraNeural (Female)
-en-US-SteffanNeural (Male)
-en-US-TonyNeural (Male)
+it-IT-BenignoNeural
+it-IT-CalimeroNeural
+it-IT-CataldoNeural
+it-IT-DiegoNeural1
+it-IT-ElsaNeural
+it-IT-FabiolaNeural
+it-IT-FiammaNeural
+it-IT-GianniNeural
+it-IT-ImeldaNeural
+it-IT-IrmaNeural
+it-IT-IsabellaNeural
+it-IT-LisandroNeural
+it-IT-PalmiraNeural
+it-IT-PierinaNeural
+it-IT-RinaldoNeural
+en-GB-AbbiNeural
+en-GB-AlfieNeural
+en-GB-BellaNeural
+en-GB-ElliotNeural
+en-GB-EthanNeural
+en-GB-HollieNeural
+en-GB-LibbyNeural
+en-GB-MaisieNeural
+en-GB-NoahNeural
+en-GB-OliverNeural
+en-GB-OliviaNeural
+en-GB-RyanNeural
+en-GB-SoniaNeural
+en-GB-ThomasNeural
+en-US-AIGenerate1Neural1
+en-US-AIGenerate2Neural1
+en-US-AmberNeural
+en-US-AnaNeural
+en-US-AriaNeural
+en-US-AshleyNeural
+en-US-BrandonNeural
+en-US-ChristopherNeural
+en-US-CoraNeural
+en-US-DavisNeural
+en-US-ElizabethNeural
+en-US-EricNeural
+en-US-GuyNeural
+en-US-JacobNeural
+en-US-JaneNeural
+en-US-JasonNeural
+en-US-JennyMultilingualNeural3
+en-US-JennyNeural
+en-US-MichelleNeural
+en-US-MonicaNeural
+en-US-NancyNeural
+en-US-RogerNeural
+en-US-SaraNeural
+en-US-SteffanNeural
+en-US-TonyNeural
 */

@@ -1,4 +1,5 @@
 import constants from './Constants.mjs';
+import Speech from "./Speech.mjs";
 
 /**
  * Provides functionality for interaction with module settings
@@ -8,8 +9,8 @@ export default class Settings {
     /**
      * Registers all of the necessary game settings for the module
      */
-    static async registerSettings() {
-
+    static async registerSettings() { 
+	
         game.settings.register(constants.moduleName, "subscriptionKey", {
             name: game.i18n.localize(`${constants.moduleName}.subscriptionKey.name`),
             scope: 'world',
@@ -26,7 +27,6 @@ export default class Settings {
             default: 'eastus'
         });
 
-
         game.settings.register(constants.moduleName, "autoRead", {
             name: game.i18n.localize(`${constants.moduleName}.autoRead.name`),
             scope: 'client',
@@ -35,11 +35,16 @@ export default class Settings {
             default: false
         });
 
+		this.speech = new Speech();
+		let voiceList = await this.speech.getVoicesList();
+		let langList = await this.speech.getLanguageList();
+
         game.settings.register(constants.moduleName, "voice", {
             name: game.i18n.localize(`${constants.moduleName}.voice.name`),
             hint: 'https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support#neural-voices',
             scope: 'client',
             config: true,
+            choices: voiceList,
             type: String,
             default: "en-US-JennyNeural"
         });
@@ -58,6 +63,7 @@ export default class Settings {
             hint: 'https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support',
             scope: 'client',
             config: true,
+            choices: langList,
             type: String,
             default: "en-us"
         });
@@ -67,8 +73,13 @@ export default class Settings {
             hint: 'https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-synthesis-markup?tabs=csharp#adjust-prosody',
             scope: 'client',
             config: true,
-            type: String,
-            default: "80"
+            type: Number,
+            range: {
+				min:  0,
+				max:  100,
+				step: 1	
+			},
+            default: 80
         });
 
         game.settings.register(constants.moduleName, "rate", {
@@ -76,8 +87,13 @@ export default class Settings {
             hint: 'https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-synthesis-markup?tabs=csharp#adjust-prosody',
             scope: 'client',
             config: true,
-            type: String,
-            default: "-15%"
+            type: Number,
+            range: {
+				min: -100,
+				max:  100,
+				step: 5	
+			},
+            default: -15
         });
 
         game.settings.register(constants.moduleName, "pitch", {
@@ -85,8 +101,13 @@ export default class Settings {
             hint: 'https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-synthesis-markup?tabs=csharp#adjust-prosody',
             scope: 'client',
             config: true,
-            type: String,
-            default: "-5%"
+            type: Number,
+            range: {
+				min: -100,
+				max:  100,
+				step: 5	
+			},
+            default: -5
         });
 
 
