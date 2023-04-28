@@ -72,7 +72,7 @@ export default class Speech {
 	            "</voice>" +
 	            "</speak>";
 	        this.player.status = "play";
-	        this.synthesizer.speakSsmlAsync(ssml, result=>{completeSpeak(result)}, err => {this.completeSpeak(err)});
+	        this.synthesizer.speakSsmlAsync(ssml, result=>{this.completeSpeak(result)}, err => {this.completeSpeak(err)});
     	}
     }
     
@@ -108,7 +108,7 @@ export default class Speech {
 	}
     
     async getVoicesList(){
-		let voiceList = new Array();
+		let voiceList = new Object();
 		if(!this.synthesizer){
 			if(!this.speechConfig){
 				let key = game.settings.get(constants.moduleName, "subscriptionKey");
@@ -126,7 +126,7 @@ export default class Speech {
 	}
 	
 	async getLanguageList(){
-		let langList = new Array();		
+		let langList = new Object();		
 		if(!this.synthesizer){
 			this.connectSpeaker();
 		}
